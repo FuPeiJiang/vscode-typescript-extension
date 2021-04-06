@@ -1,5 +1,5 @@
 {
-  "name": "git-commits-editor",
+	"name": "git-commits-editor",
 	"displayName": "git-commits-editor",
 	"description": "",
 	"publisher": "FuPeiJiang",
@@ -9,24 +9,25 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/FuPeiJiang/git-rebase-files"
+		"url": "https://github.com/FuPeiJiang/git-commits-editor"
 	},
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:git-commits-editor.helloWorld"
+		"onCommand:git-commits-editor.helloWorld"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "git-commits-editor.helloWorld",
-				"title": "Hello World"
-			}
-		]
+		"commands": [{
+			"command": "git-commits-editor.helloWorld",
+			"title": "Hello World"
+		}]
 	},
 	"scripts": {
+		"ext": "webpack --mode production && vsce package -o git-commits-editor.vsix && code --install-extension git-commits-editor.vsix",
+		"vsix": "webpack --mode production && vsce package -o git-commits-editor.vsix",
+		"nowebpack": "vsce package -o git-commits-editor.vsix && code --install-extension git-commits-editor.vsix",
 		"vscode:prepublish": "yarn run package",
 		"compile": "webpack --config ./build/node-extension.webpack.config.js",
 		"watch": "webpack --watch --config ./build/node-extension.webpack.config.js",
