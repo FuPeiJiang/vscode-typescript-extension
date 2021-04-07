@@ -1,8 +1,8 @@
 //@ts-check
 
-'use strict';
+'use strict'
 
-const path = require('path');
+const path = require('path')
 
 /**@type {import('webpack').Configuration}*/
 const config = {
@@ -12,7 +12,7 @@ const config = {
   entry: './src/extension.ts', // the entry point of this extension, 📖 -> https://webpack.js.org/configuration/entry-context/
   output: {
     // the bundle is stored in the 'dist' folder (check package.json), 📖 -> https://webpack.js.org/configuration/output/
-    path: path.resolve(__dirname, '..', 'dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'extension.js',
     libraryTarget: 'commonjs2',
   },
@@ -37,5 +37,5 @@ const config = {
       },
     ],
   },
-};
-module.exports = config;
+}
+module.exports = config
